@@ -63,4 +63,4 @@ Remove transitions (CT or GA)
 
 ## Running an outlier test ##
 
-## Warp up ##
+## Wrap up ##
