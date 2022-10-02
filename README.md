@@ -42,6 +42,17 @@ https://paleomix.readthedocs.io/en/stable/
 
 ## Variant filtering with SAMtools ##
 
+Remove individuals with low coverage/calls
+Remove calls lower than 5X coverage
+Remove sites with more than 20% missing data
+Remove sites with very low or high coverage
+(From Bi et al) Remove sites with biases associated with reference and alternative allele Phred quality (1e100), mapping quality (0), and distance of alleles from the ends of reads (0.0001). Also
+remove sites that show a bias towards sequencing reads coming from the forward or reverse
+strand (0.0001).
+Remove min map q <20
+Remove min base q <20
+Remove transitions (CT or GA)
+
 ## Getting started with R ##
 
 ## Importing VCF and converting to ##
