@@ -6,7 +6,7 @@ Workshop on museum genomics for SCCS-NY 2022 at AMNH
 Welcome to the museum genomics workshop at SCCS-NY 2022, hosted by the Center for Biodiversity and Conservation at the American Museum of Natural History! This two day workshop provides an introduction to using museum collections for conservation-related genomics work. The first day covers background of the field, and a chance for breakout group discussion with organizers about project ideas and designs. The second day consists of hands-on data analysis using a publicly available genomics data set. 
 
 This workshop was organized and led by:  
-  Mary Blair (CBC/AMNH)  
+Mary Blair (CBC/AMNH)  
 Luca Pozzi (UTSA)  
 Anna Penna (UTSA, NMNH)  
 Alexander Salis (AMNH)  
@@ -18,7 +18,7 @@ Stephen Gaughran (Princeton U, AMNH)
 
 ## Study background: changing chipmunks ##
 
-The hands-on portion of this workshop 
+The hands-on portion of this workshop uses 
 
 Bi et al. 2015, Bi et al. 2019, Herrera et al. 2022
 
@@ -57,15 +57,22 @@ https://paleomix.readthedocs.io/en/stable/
 
 ## Variant filtering with SAMtools ##
 
+*Variant filtering depends on many factors including your data set, sample quality, analyses you'll run, and questions you're asking. Some analyses (especially those that depend on individual sites, like GWAS) are very sensitive to genotyping error. Others, like those calculated from genome-wide averages, are often more foregiving. There are no solid heuristics for filter thresholds, and filtering should be viewed as an iterative process. We are going to do a few filtering steps here to illustrate the process, but these filters are not exhaustive and would likely not be considered sufficient by reviewers!*
+
+Let's start by filtering this variant set by setting a minimum PHRED-scaled quality and a minimum depth for each site. This weeds out the majority of sites that were covered by a few stray reads. We can use bcftools to filter with the command:
+
+`bcftools filter -i 'QUAL>20 && INFO/DP>100' Tminimus_SS.vcf > Tminimus_SS_minQ20minDP20.vcf`
+
+Next let's filter on individual genotype calls. 
+
+
+
 Remove individuals with low coverage/calls
-Remove calls lower than 5X coverage
+Remove calls lower than 4X coverage
 Remove sites with more than 20% missing data
 Remove sites with very low or high coverage
-(From Bi et al) Remove sites with biases associated with reference and alternative allele Phred quality (1e100), mapping quality (0), and distance of alleles from the ends of reads (0.0001). Also
-remove sites that show a bias towards sequencing reads coming from the forward or reverse
-strand (0.0001).
-Remove min map q <20
-Remove min base q <20
+(From Bi et al) Remove sites with biases associated with reference and alternative allele Phred quality (1e100), mapping quality (0), and distance of alleles from the ends of reads (0.0001). 
+Also remove sites that show a bias towards sequencing reads coming from the forward or reverse strand (0.0001).
 Remove transitions (CT or GA)
 
 ## Getting started with R ##
