@@ -3,7 +3,22 @@ Workshop on museum genomics for SCCS-NY 2022 at AMNH
 
 ## Workshop background ##
 
+Welcome to the museum genomics workshop at SCCS-NY 2022, hosted by the Center for Biodiversity and Conservation at the American Museum of Natural History! This two day workshop provides an introduction to using museum collections for conservation-related genomics work. The first day covers background of the field, and a chance for breakout group discussion with organizers about project ideas and designs. The second day consists of hands-on data analysis using a publicly available genomics data set. 
+
+This workshop was organized and led by:
+Mary Blair (CBC/AMNH)
+Luca Pozzi (UTSA)
+Anna Penna (UTSA, NMNH)
+Alexander Salis (AMNH)
+Lauren Clark (AMNH)
+Megan Wallace (AMNH)
+Suzanne Macey (CBC/AMNH)
+Melina Giakoumis (CUNY, AMNH)
+Stephen Gaughran (Princeton U, AMNH)
+
 ## Study background: changing chipmunks ##
+
+The hands-on portion of this workshop 
 
 Bi et al. 2015, Bi et al. 2019, Herrera et al. 2022
 
