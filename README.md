@@ -59,6 +59,20 @@ https://paleomix.readthedocs.io/en/stable/
 
 *Variant filtering depends on many factors including your data set, sample quality, analyses you'll run, and questions you're asking. Some analyses (especially those that depend on individual sites, like GWAS) are very sensitive to genotyping error. Others, like those calculated from genome-wide averages, are often more foregiving. There are no solid heuristics for filter thresholds, and filtering should be viewed as an iterative process. We are going to do a few filtering steps here to illustrate the process, but these filters are not exhaustive and would likely not be considered sufficient by reviewers!*
 
+Before we get to filtering, let's take a look at the samples included in our VCF. This is always good to check, as Sample IDs occassionally do not come out as you'd expect. You can take a look at them by running:
+
+`bcftools query -l Tminimus_SS.vcf`
+
+which should give you something like:
+
+`Sample_SRR3172000
+Sample_SRR3172001
+Sample_SRR3172003
+Sample_SRR3172004
+...
+Sample_SRR3172050
+Sample_SRR3172062`
+
 Let's start by filtering this variant set by setting a minimum PHRED-scaled quality and a minimum depth for each site. This weeds out the majority of sites that were covered by a few stray reads. We can use bcftools to filter with the command:
 
 `bcftools filter -i 'QUAL>20 && INFO/DP>100' Tminimus_SS.vcf > Tminimus_SS_minQ20minDP100.vcf`
@@ -85,7 +99,9 @@ Checking the missing % again, we're now in much better shape! It looks like all 
 
 There are several other filtering steps we could take, and the Bi *et al.* 2019 paper covers a few more. For the sake of ease, though, we'll stop our filtering here.
 
-However, there is one final genotype quality aspect that we should consider specifically because we are working with historical DNA. As we discussed in lecture, as DNA degrades over time, cytosines are de-aminated (i.e. lose their amino group), which turns them into uracil. This gets prepared in our sequencing libraries as thymine ("T", the DNA version of uracil), which can produce a C/T heterozygote or T/T homozygote at a site that was actually C/C in the organisms genome. (**Note**: because sequencers read in both directions, the above is also true for G/A heterozygotes or A/A homozygotes at sites that were originally G/G.) To deal with this, 
+However, there is one final genotype quality aspect that we should consider specifically because we are working with historical DNA. As we discussed in lecture, as DNA degrades over time, cytosines are de-aminated (i.e. lose their amino group), which turns them into uracil. This gets prepared in our sequencing libraries as thymine ("T", the DNA version of uracil), which can produce a C/T heterozygote or T/T homozygote at a site that was actually C/C in the organisms genome. (**Note**: because sequencers read in both directions, the above is also true for G/A heterozygotes or A/A homozygotes at sites that were originally G/G.)
+
+The easiest way for us to deal with this issue is to remove any transitions (i.e. C->T, T->C, G->A, 
 
 Remove transitions (CT or GA)
 
