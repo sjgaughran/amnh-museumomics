@@ -65,7 +65,7 @@ Before we get to filtering, let's take a look at the samples included in our VCF
 
 which should give you something like:
 
-Sample_SRR3172000  
+Sample_SRR3172000<br/>
 Sample_SRR3172001  
 Sample_SRR3172003  
 Sample_SRR3172004  
