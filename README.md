@@ -61,19 +61,35 @@ https://paleomix.readthedocs.io/en/stable/
 
 Let's start by filtering this variant set by setting a minimum PHRED-scaled quality and a minimum depth for each site. This weeds out the majority of sites that were covered by a few stray reads. We can use bcftools to filter with the command:
 
-`bcftools filter -i 'QUAL>20 && INFO/DP>100' Tminimus_SS.vcf > Tminimus_SS_minQ20minDP20.vcf`
+`bcftools filter -i 'QUAL>20 && INFO/DP>100' Tminimus_SS.vcf > Tminimus_SS_minQ20minDP100.vcf`
+
 
 Next let's filter on individual genotype calls. 
 
+`bcftools filter -S . -i 'FMT/DP>2 | FMT/GQ>20' Tminimus_SS_minQ20minDP100.vcf > Tminimus_SS_minQ20minDP100_GenoDP3GQ20.vcf`
+
+Finally, we want to make sure our SNPs are bi-allelic. 
+
+`bcftools view -m2 -M2 Tminimus_SS_minQ20minDP100_GenoDP3GQ20.vcf > Tminimus_SS_minQ20minDP100_GenoDP3GQ20_bi.vcf`
+
+Our last two steps will be removing sites with too much missing data (>20%), and removing individuals with too many missing genotypes (>20%). Before we do that, let's take a look at where these measures stand. 
 
 
-Remove individuals with low coverage/calls
-Remove calls lower than 4X coverage
-Remove sites with more than 20% missing data
-Remove sites with very low or high coverage
+Sample_SRR3171971 has a suspiciously high number of singletons. 
+
+Looking at the output, some of our samples do have high amounts of missing data (>30%). However, some of these may be affected by sites that are poor quality across most samples. Let's first remove those sites with missing data:
+
+`bcftools filter -i 'F_MISSING<0.2' Tminimus_SS_minQ20minDP100_GenoDP3GQ20_bi.vcf > Tminimus_SS_minQ20minDP100_GenoDP3GQ20_bi_lowmiss.vcf` 
+
+Checking the missing % again, we're now in much better shape! It looks like all individuals now have less than 10% missing genotype calls, which is good news! This is a good example of why it
+
+Remove sites with very high coverage
 (From Bi et al) Remove sites with biases associated with reference and alternative allele Phred quality (1e100), mapping quality (0), and distance of alleles from the ends of reads (0.0001). 
 Also remove sites that show a bias towards sequencing reads coming from the forward or reverse strand (0.0001).
 Remove transitions (CT or GA)
+
+
+
 
 ## Getting started with R ##
 
