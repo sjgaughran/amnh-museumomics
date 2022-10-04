@@ -83,9 +83,10 @@ Looking at the output, some of our samples do have high amounts of missing data 
 
 Checking the missing % again, we're now in much better shape! It looks like all individuals now have less than 10% missing genotype calls, which is good news! This is a good example of why it
 
-Remove sites with very high coverage
-(From Bi et al) Remove sites with biases associated with reference and alternative allele Phred quality (1e100), mapping quality (0), and distance of alleles from the ends of reads (0.0001). 
-Also remove sites that show a bias towards sequencing reads coming from the forward or reverse strand (0.0001).
+There are several other filtering steps we could take, and the Bi *et al.* 2019 paper covers a few more. For the sake of ease, though, we'll stop our filtering here.
+
+However, there is one final genotype quality aspect that we should consider specifically because we are working with historical DNA. As we discussed in lecture, as DNA degrades over time, cytosines are de-aminated (i.e. lose their amino group), which turns them into uracil. This gets prepared in our sequencing libraries as thymine ("T", the DNA version of uracil), which can produce a C/T heterozygote or T/T homozygote at a site that was actually C/C in the organisms genome. (**Note**: because sequencers read in both directions, the above is also true for G/A heterozygotes or A/A homozygotes at sites that were originally G/G.) To deal with this, 
+
 Remove transitions (CT or GA)
 
 
