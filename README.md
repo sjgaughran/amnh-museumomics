@@ -65,13 +65,13 @@ Before we get to filtering, let's take a look at the samples included in our VCF
 
 which should give you something like:
 
-`Sample_SRR3172000
-Sample_SRR3172001
-Sample_SRR3172003
-Sample_SRR3172004
-...
-Sample_SRR3172050
-Sample_SRR3172062`
+`Sample_SRR3172000  
+Sample_SRR3172001  
+Sample_SRR3172003  
+Sample_SRR3172004  
+...  
+Sample_SRR3172050  
+Sample_SRR3172062  `
 
 Let's start by filtering this variant set by setting a minimum PHRED-scaled quality and a minimum depth for each site. This weeds out the majority of sites that were covered by a few stray reads. We can use bcftools to filter with the command:
 
