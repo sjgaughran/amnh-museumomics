@@ -77,12 +77,26 @@ Remove transitions (CT or GA)
 
 ## Getting started with R ##
 
+*Melina*
+
 ## Importing VCF and converting to ##
+
+*Melina*
 
 ## Running DAPC ##
 
+*Melina*
+
 ## Running structure ## 
+
+*Melina*
 
 ## Running an outlier test ##
 
+*Melina*
+
 ## Wrap up ##
+
+
+
+
