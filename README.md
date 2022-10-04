@@ -73,10 +73,11 @@ Sample_SRR3172004
 Sample_SRR3172050  
 Sample_SRR3172062
 
+That looks good for now, so we can move on to filtering!
+
 Let's start by filtering this variant set by setting a minimum PHRED-scaled quality and a minimum depth for each site. This weeds out the majority of sites that were covered by a few stray reads. We can use bcftools to filter with the command:
 
 `bcftools filter -i 'QUAL>20 && INFO/DP>100' Tminimus_SS.vcf > Tminimus_SS_minQ20minDP100.vcf`
-
 
 Next let's filter on individual genotype calls. 
 
@@ -99,14 +100,13 @@ Checking the missing % again, we're now in much better shape! It looks like all 
 
 There are several other filtering steps we could take, and the Bi *et al.* 2019 paper covers a few more. For the sake of ease, though, we'll stop our filtering here.
 
-However, there is one final genotype quality aspect that we should consider specifically because we are working with historical DNA. As we discussed in lecture, as DNA degrades over time, cytosines are de-aminated (i.e. lose their amino group), which turns them into uracil. This gets prepared in our sequencing libraries as thymine ("T", the DNA version of uracil), which can produce a C/T heterozygote or T/T homozygote at a site that was actually C/C in the organisms genome. (**Note**: because sequencers read in both directions, the above is also true for G/A heterozygotes or A/A homozygotes at sites that were originally G/G.)
+However, there is one final genotype quality aspect that we should consider specifically because we are working with historical DNA. As we discussed in lecture, as DNA degrades over time, cytosines are deaminated (i.e. lose their amino group), which turns them into uracil. This gets prepared in our sequencing libraries as thymine ("T", the DNA version of uracil), which can produce a C/T heterozygote or T/T homozygote at a site that was actually C/C in the organisms genome. (**Note**: because sequencers read in both directions, the above is also true for G/A heterozygotes or A/A homozygotes at sites that were originally G/G.)
 
-The easiest way for us to deal with this issue is to remove any transitions (i.e. C->T, T->C, G->A, 
+The easiest way for us to deal with this issue is to remove sites where the reference allele is C and the alternate allele is T ("C-to-T") or where the reference allele is G and the alternate allele is A ("G-to-A"). This is an overly conservative step, and will remove lots of perfectly valid SNPs from our data set. Filtering for deamination is an active topic of research, and more nuanced ways of filtering deaminated sites while retaining valid transitions are being developed. For now, though, we'll follow Bi and colleagues' lead, and remove C->T and G->A sites. We can filter for this with:
 
-Remove transitions (CT or GA)
+`bcftools filter -e 'REF="C" & ALT="T"' Tminimus_SS_minQ20minDP100_GenoDP3GQ20_bi_lowmiss.vcf | bcftools filter -e 'REF="G" & ALT="A"' - > Tminimus_SS_minQ20minDP100_GenoDP3GQ20_bi_lowmiss_noTransit.vcf`
 
-
-
+While not perfect, this VCF will be the final set of SNPs we use in our population genetic analyses.
 
 ## Getting started with R ##
 
