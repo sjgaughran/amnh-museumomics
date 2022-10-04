@@ -110,7 +110,16 @@ While not perfect, this VCF will be the final set of SNPs we use in our populati
 
 ## Getting started with R ##
 
-*Melina*
+R is an open-source statistical software package. We use it in conjunction with RStudio, an easy way to manage R code. 
+
+To download R, go to:  
+            Windows: https://cran.r-project.org/bin/windows/base/ 
+            Mac: https://cran.rstudio.com/bin/macosx/ 
+To download RStudio, go to: https://www.rstudio.com/products/rstudio/download/ 
+
+Install RStudio Desktop (Open Source) accepting the default pathways.  
+
+Now, you will need to tell RStudio where R lives. Open RStudio, go to Tools > Global Options and change the R version by navigating to where you saved R. Unless you have a reason against it, you should use the 64 bit version of R (64 and 32 bit R are both downloaded). 
 
 ## Importing VCF and converting to ##
 
