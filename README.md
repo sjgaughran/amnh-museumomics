@@ -86,11 +86,11 @@ Remember that every time you close out of your terminal, your environment will b
 
 `conda activate ancient-dna`
 
-## Study background: changing chipmunks ##
+## Study system: changing chipmunks ##
 
-The hands-on portion of this workshop uses 
+The hands-on portion of this workshop uses a publicly available data set from a study entitled *Temporal genomic contrasts reveal rapid evolutionary responses in an alpine mammal during recent climate change* by Bi *et al.* (2019). Briefly, that study performs exon capture on historic samples (collected from 1911-1916) and modern samples of three populations of chipmunks in the genus *Tamias*. For ease, we will be working only with the samples from *T. alpinus*, which is found in a limited range in the Sierra Mountains of California. You can read more about the species here:
 
-Bi et al. 2015, Bi et al. 2019, Herrera et al. 2022
+https://en.wikipedia.org/wiki/Alpine_chipmunk
 
 ## Fetching publicly available data ##
 
