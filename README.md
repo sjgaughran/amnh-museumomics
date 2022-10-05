@@ -23,8 +23,8 @@ This workshop was organized by:
 For the hands-on portion of this workshop, we will be analyzing our SNP data set in R. R is an open-source statistical software package. We use it in conjunction with RStudio, an easy way to manage R code. 
 
 Please try to get R set up on your computer before the workshop. To download R, go to:  
-            Windows: https://cran.r-project.org/bin/windows/base/ 
-            Mac: https://cran.rstudio.com/bin/macosx/ 
+            Windows: https://cran.r-project.org/bin/windows/base/   
+            Mac: https://cran.rstudio.com/bin/macosx/   
 To download RStudio, go to: https://www.rstudio.com/products/rstudio/download/ 
 
 Install RStudio Desktop (Open Source) accepting the default pathways.  
