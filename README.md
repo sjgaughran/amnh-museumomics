@@ -32,6 +32,26 @@ Install RStudio Desktop (Open Source) accepting the default pathways.
 
 Now, you will need to tell RStudio where R lives. Open RStudio, go to Tools > Global Options and change the R version by navigating to where you saved R. Unless you have a reason against it, you should use the 64 bit version of R (64 and 32 bit R are both downloaded). 
 
+There are several R packages we will be using for this workshop. To install them, open R studio and click on the “Packages” tab in the lower right hand pane. 
+
+Click the “Install” button (all the way to the left in the “Packages” tab) and a window should pop up. It should automatically show that we are installing from the CRAN repository. Type “adegenet” and then click “Install.”
+
+Once that is installed, do this again but type “vcfR” into the pop-up window. 
+
+The third package is not on the CRAN repository, so it requires a different type of installation. In your R console (top left pane), type the following: 
+
+`if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("LEA")`
+
+Then click “Run” in the top right of your console (or type command + enter). 
+
+Alternatively, you can install the first two packages by typing the following into your R console: 
+
+`install.packages("adegenet")
+install.packages(“vcfR”)`
+
 If you run into trouble, no worries! We will have time to sort it out at the beginning of the workshop. 
 
 ### Optional: getting started with anaconda and the command line ###
