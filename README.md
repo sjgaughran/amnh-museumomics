@@ -36,7 +36,7 @@ The list of SRR codes for modern samples was:
 
 ### Reference genome ###
 
-Reference genomes are becoming an increasingly important part of genomics, as more and more become available for non-model organisms. These assemblies allow you to map raw sequencing reads to a single reference for the species (or a closely related species). This not only increases repeatability across studies, it also allows for more accurate mapping and variant calling compared to *de novo* methods. The reference genome for *T. minimums* was recently published in: 
+Reference genomes are becoming an increasingly important part of genomics, as more and more become available for non-model organisms. These assemblies allow you to map raw sequencing reads to a single reference for the species (or a closely related species). This not only increases repeatability across studies, it also allows for more accurate mapping and variant calling compared to *de novo* methods. The reference genome for *T. minimus* was recently published in: 
 
 https://onlinelibrary.wiley.com/doi/full/10.1111/evo.14546
 
