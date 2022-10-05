@@ -20,9 +20,9 @@ Stephen Gaughran (Princeton U, AMNH)
 
 ### **Required**: Getting started with R ###
 
-R is an open-source statistical software package. We use it in conjunction with RStudio, an easy way to manage R code. 
+For the hands on portion of this workshop, we will be analyzing our SNP data set in R. R is an open-source statistical software package. We use it in conjunction with RStudio, an easy way to manage R code. 
 
-To download R, go to:  
+Please try to get R set up on your computer before the workshop. To download R, go to:  
             Windows: https://cran.r-project.org/bin/windows/base/ 
             Mac: https://cran.rstudio.com/bin/macosx/ 
 To download RStudio, go to: https://www.rstudio.com/products/rstudio/download/ 
@@ -31,7 +31,10 @@ Install RStudio Desktop (Open Source) accepting the default pathways.
 
 Now, you will need to tell RStudio where R lives. Open RStudio, go to Tools > Global Options and change the R version by navigating to where you saved R. Unless you have a reason against it, you should use the 64 bit version of R (64 and 32 bit R are both downloaded). 
 
+If you run into trouble, no worries! We will have time to sort it out at the beginning of the workshop. 
+
 ### **Optional**: getting started with anaconda and the command line ###
+
 
 
 
