@@ -16,6 +16,26 @@ Suzanne Macey (CBC/AMNH)
 Melina Giakoumis (CUNY, AMNH)  
 Stephen Gaughran (Princeton U, AMNH)  
 
+## Preparing for the workshop ##
+
+### **Required**: Getting started with R ###
+
+R is an open-source statistical software package. We use it in conjunction with RStudio, an easy way to manage R code. 
+
+To download R, go to:  
+            Windows: https://cran.r-project.org/bin/windows/base/ 
+            Mac: https://cran.rstudio.com/bin/macosx/ 
+To download RStudio, go to: https://www.rstudio.com/products/rstudio/download/ 
+
+Install RStudio Desktop (Open Source) accepting the default pathways.  
+
+Now, you will need to tell RStudio where R lives. Open RStudio, go to Tools > Global Options and change the R version by navigating to where you saved R. Unless you have a reason against it, you should use the 64 bit version of R (64 and 32 bit R are both downloaded). 
+
+### **Optional**: getting started with anaconda and the command line ###
+
+
+
+
 ## Study background: changing chipmunks ##
 
 The hands-on portion of this workshop uses 
@@ -110,18 +130,6 @@ The easiest way for us to deal with this issue is to remove sites where the refe
 
 While not perfect, this VCF will be the final set of SNPs we use in our population genetic analyses.
 
-## Getting started with R ##
-
-R is an open-source statistical software package. We use it in conjunction with RStudio, an easy way to manage R code. 
-
-To download R, go to:  
-            Windows: https://cran.r-project.org/bin/windows/base/ 
-            Mac: https://cran.rstudio.com/bin/macosx/ 
-To download RStudio, go to: https://www.rstudio.com/products/rstudio/download/ 
-
-Install RStudio Desktop (Open Source) accepting the default pathways.  
-
-Now, you will need to tell RStudio where R lives. Open RStudio, go to Tools > Global Options and change the R version by navigating to where you saved R. Unless you have a reason against it, you should use the 64 bit version of R (64 and 32 bit R are both downloaded). 
 
 ## Importing VCF and converting to ##
 
