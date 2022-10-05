@@ -5,7 +5,7 @@ Workshop on museum genomics for SCCS-NY 2022 at AMNH
 
 Welcome to the museum genomics workshop at SCCS-NY 2022, hosted by the Center for Biodiversity and Conservation at the American Museum of Natural History! This two day workshop provides an introduction to using museum collections for conservation-related genomics work. The first day covers background of the field, and a chance for breakout group discussion with organizers about project ideas and designs. The second day consists of hands-on data analysis using a publicly available genomics data set. 
 
-This workshop was organized and led by:  
+This workshop was organized by:  
 * Mary Blair (CBC/AMNH)  
 * Luca Pozzi (UTSA)  
 * Anna Penna (UTSA, NMNH)  
@@ -18,9 +18,9 @@ This workshop was organized and led by:
 
 ## Preparing for the workshop ##
 
-### **Required**: Getting started with R ###
+### Required: Getting started with R ###
 
-For the hands on portion of this workshop, we will be analyzing our SNP data set in R. R is an open-source statistical software package. We use it in conjunction with RStudio, an easy way to manage R code. 
+For the hands-on portion of this workshop, we will be analyzing our SNP data set in R. R is an open-source statistical software package. We use it in conjunction with RStudio, an easy way to manage R code. 
 
 Please try to get R set up on your computer before the workshop. To download R, go to:  
             Windows: https://cran.r-project.org/bin/windows/base/ 
@@ -33,11 +33,37 @@ Now, you will need to tell RStudio where R lives. Open RStudio, go to Tools > Gl
 
 If you run into trouble, no worries! We will have time to sort it out at the beginning of the workshop. 
 
-### **Optional**: getting started with anaconda and the command line ###
+### Optional: getting started with anaconda and the command line ###
 
+While we will only be doing some basic analyses in the SCCS-NY workshop, this GitHub repo provides a fairly complete workflow for generating the SNP data set and analyzing it. Most of the other steps require tools found not in R, but in the command line. We won't be providing an introduction to working on the command line, but there are many useful (and free) resources out there on how to get oriented with the basic command line interfaces.
 
+All of the command line tools can be downloaded and accessed through anaconda. Anaconda is a way for python packages to be distributed, and the package `conda` allows for the efficient download, installation, and management of anaconda packages. You can find instructions on how to install anaconda here:
 
+https://docs.anaconda.com/anaconda/install/
 
+Once installed, you should use `conda` to create an environment for this workshop (or maybe one for analzying ancient DNA genomic data more generally). "Environment" just means a virtual confined space where you can install packages and run them without worrying about incompatibilities across your system. You can create the environment by running:
+
+`conda create --name ancient-dna`
+
+To activate this environment, run:
+
+`conda activate ancient-dna` or `source activate ancient-dna`
+
+*(different versions of conda have different ways of activating an environment, so you may need to try both)*
+
+Now that you are in your `ancient-dna` environment, you can safely install all of the packages used in this tutorial. To do that, run each of these commands:
+
+`conda install -c bioconda sra-tools`
+`conda install -c bioconda bwa`
+`conda install -c bioconda bcftools`
+
+To install the paleomix package, follow these instructions:
+
+https://paleomix.readthedocs.io/en/stable/installation.html#conda-installation
+
+Remember that every time you close out of your terminal, your environment will be deactivated. Next time you're ready to use it, reactivate it by running:
+
+`conda activate ancient-dna`
 
 ## Study background: changing chipmunks ##
 
