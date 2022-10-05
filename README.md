@@ -53,9 +53,9 @@ To activate this environment, run:
 
 Now that you are in your `ancient-dna` environment, you can safely install all of the packages used in this tutorial. To do that, run each of these commands:
 
-`conda install -c bioconda sra-tools`
-`conda install -c bioconda bwa`
-`conda install -c bioconda bcftools`
+`conda install -c bioconda sra-tools`  
+`conda install -c bioconda bwa`  
+`conda install -c bioconda bcftools`  
 
 To install the paleomix package, follow these instructions:
 
