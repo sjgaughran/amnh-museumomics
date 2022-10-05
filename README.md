@@ -25,6 +25,7 @@ For the hands-on portion of this workshop, we will be analyzing our SNP data set
 Please try to get R set up on your computer before the workshop. To download R, go to:  
 * Windows: https://cran.r-project.org/bin/windows/base/   
 * Mac: https://cran.rstudio.com/bin/macosx/   
+
 To download RStudio, go to: https://www.rstudio.com/products/rstudio/download/ 
 
 Install RStudio Desktop (Open Source) accepting the default pathways.  
