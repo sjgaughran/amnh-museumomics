@@ -41,16 +41,17 @@ Once that is installed, do this again but type “vcfR” into the pop-up window
 The third package is not on the CRAN repository, so it requires a different type of installation. In your R console (top left pane), type the following: 
 
 `if (!require("BiocManager", quietly = TRUE))
-    install.packages("BiocManager")
+    install.packages("BiocManager")`
 
-BiocManager::install("LEA")`
+`BiocManager::install("LEA")`
 
 Then click “Run” in the top right of your console (or type command + enter). 
 
 Alternatively, you can install the first two packages by typing the following into your R console: 
 
-`install.packages("adegenet")
-install.packages(“vcfR”)`
+`install.packages("adegenet")`
+
+`install.packages(“vcfR”)`
 
 If you run into trouble, no worries! We will have time to sort it out at the beginning of the workshop. 
 
