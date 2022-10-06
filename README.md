@@ -2,7 +2,7 @@
 
 - [Workshop Background](#Workshop-Background)
 - [Preparing for the workshop](#Preparing-for-the-workshop)
-  * [Required: Getting started with R](#Required:-Getting-started-with-R)
+  * [Required: Getting started with R](#Required-Getting-started-with-R)
     + [Sub-sub-heading](#sub-sub-heading)
 
 
