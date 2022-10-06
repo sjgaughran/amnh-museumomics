@@ -14,6 +14,8 @@
   * [Reference genome](#Reference-genome)
 - [Trimming and aligning reads with Paleomix](#Trimming-and-aligning-reads-with-Paleomix)
   * [Looking at Paleomix output](#Looking-at-Paleomix-output)
+- [Variant calling with BCFtools](#Variant-calling-with-BCFtools)
+- [Variant filtering with SAMtools](#Variant-calling-with-SAMtools)
 - [Wrap up](#Wrap-up)
 
 
