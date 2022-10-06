@@ -9,6 +9,9 @@
   * [Optional: Getting started with anaconda and the command line](#Optional-Getting-started-with-anaconda-and-the-command-line)
     + [Sub-sub-heading](#sub-sub-heading)
 - [Study system: changing chipmunks](#Study-system-changing-chipmunks)
+- [Fetching publicly available data](#Fetching-publicly-available-data)
+  * [SRA](#SRA)
+  * [Reference genome](#Reference-genome)
 - [Wrap up](#Wrap-up)
 
 
