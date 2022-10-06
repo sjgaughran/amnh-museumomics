@@ -13,6 +13,7 @@
   * [SRA](#SRA)
   * [Reference genome](#Reference-genome)
 - [Trimming and aligning reads with Paleomix](#Trimming-and-aligning-reads-with-Paleomix)
+  * [Looking at Paleomix output](#Looking-at-Paleomix-output)
 - [Wrap up](#Wrap-up)
 
 
