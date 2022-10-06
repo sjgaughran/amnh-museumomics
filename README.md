@@ -1,6 +1,6 @@
 # amnh-museumomics
 
-- [Workshop Background](#Workshop Background)
+- [Workshop Background](#Workshop-Background)
   * [Sub-heading](#sub-heading)
     + [Sub-sub-heading](#sub-sub-heading)
 
