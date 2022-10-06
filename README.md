@@ -218,10 +218,6 @@ While not perfect, this VCF will be the final set of SNPs we use in our populati
 
 *Melina*
 
-## Running an outlier test ##
-
-*Melina*
-
 ## Wrap up ##
 
 As you'll see in the Bi *et al.* paper, we have only covered a subset of analyses in this workshop. Two other main analyses they do in that paper are demographic inference and outlier loci detection. Now that you have the data set, you can follow the methods that paper and try those analyeses yourselves!
