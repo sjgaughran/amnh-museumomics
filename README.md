@@ -16,6 +16,9 @@
   * [Looking at Paleomix output](#Looking-at-Paleomix-output)
 - [Variant calling with BCFtools](#Variant-calling-with-BCFtools)
 - [Variant filtering with SAMtools](#Variant-calling-with-SAMtools)
+- [Importing a VCF into R](#Importing-a-VCF-into-R)
+- [Running adegenet and DAPC](#Running-adegenet-and-DAPC)
+- [Running structure](#Running-structure)
 - [Wrap up](#Wrap-up)
 
 
@@ -203,7 +206,7 @@ The easiest way for us to deal with this issue is to remove sites where the refe
 While not perfect, this VCF will be the final set of SNPs we use in our population genetic analyses.
 
 
-## Importing VCF and converting to ##
+## Importing a VCF into R ##
 
 *Melina*
 
