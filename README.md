@@ -214,11 +214,11 @@ If you need to decompress the file, run:
 
 `bcftools view Tminimus_SS_minQ20minDP100_GenoDP3GQ20_bi_lowmiss_noTransit.vcf.gz -O v > Tminimus_SS_minQ20minDP100_GenoDP3GQ20_bi_lowmiss_noTransit.vcf.gz`
 
-## Running DAPC ##
+## Running a PCA and DAPC ##
 
 *Melina*
 
-## Running structure ## 
+## Assessing population structure with sNMF in LEA ## 
 
 *Melina*
 
