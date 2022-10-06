@@ -210,6 +210,10 @@ While not perfect, this VCF will be the final set of SNPs we use in our populati
 
 *Melina*
 
+If you need to decompress the file, run:
+
+`bcftools view Tminimus_SS_minQ20minDP100_GenoDP3GQ20_bi_lowmiss_noTransit.vcf.gz -O v > Tminimus_SS_minQ20minDP100_GenoDP3GQ20_bi_lowmiss_noTransit.vcf.gz`
+
 ## Running DAPC ##
 
 *Melina*
