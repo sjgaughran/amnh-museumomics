@@ -31,6 +31,8 @@ Install RStudio Desktop (Open Source) accepting the default pathways.
 
 Now, you will need to tell RStudio where R lives. Open RStudio, go to Tools > Global Options and change the R version by navigating to where you saved R. Unless you have a reason against it, you should use the 64 bit version of R (64 and 32 bit R are both downloaded). 
 
+### Required: Installing R packages
+
 There are several R packages we will be using for this workshop. To install them, open R studio and click on the “Packages” tab in the lower right hand pane. 
 
 Click the “Install” button (all the way to the left in the “Packages” tab) and a window should pop up. It should automatically show that we are installing from the CRAN repository. Type “adegenet” and then click “Install.”
