@@ -3,6 +3,8 @@
 - [Workshop Background](#Workshop-Background)
 - [Preparing for the workshop](#Preparing-for-the-workshop)
   * [Required: Getting started with R](#Required-Getting-started-with-R)
+  * [Required: Installing R packages](#Required-Installing-R-packages)
+  * [Optional: Getting started with anaconda and the command line](#Optional-Getting-started-with-anaconda-and-the-command-line)
     + [Sub-sub-heading](#sub-sub-heading)
 
 
@@ -39,7 +41,7 @@ Install RStudio Desktop (Open Source) accepting the default pathways.
 
 Now, you will need to tell RStudio where R lives. Open RStudio, go to Tools > Global Options and change the R version by navigating to where you saved R. Unless you have a reason against it, you should use the 64 bit version of R (64 and 32 bit R are both downloaded). 
 
-### Required: Installing R packages
+### Required: Installing R packages ###
 
 There are several R packages we will be using for this workshop. To install them, open R studio and click on the “Packages” tab in the lower right hand pane. 
 
@@ -64,7 +66,7 @@ Alternatively, you can install the first two packages by typing the following in
 
 If you run into trouble, no worries! We will have time to sort it out at the beginning of the workshop. 
 
-### Optional: getting started with anaconda and the command line ###
+### Optional: Getting started with anaconda and the command line ###
 
 While we will only be doing some basic analyses in the SCCS-NY workshop, this GitHub repo provides a fairly complete workflow for generating the SNP data set and analyzing it. Most of the other steps require tools found not in R, but in the command line. We won't be providing an introduction to working on the command line, but there are many useful (and free) resources out there on how to get oriented with the basic command line interfaces.
 
