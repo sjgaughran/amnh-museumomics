@@ -1,7 +1,8 @@
 # amnh-museumomics
 
 - [Workshop Background](#Workshop-Background)
-  * [Sub-heading](#sub-heading)
+- [Preparing for the workshop](#Preparing-for-the-workshop)
+  * [Required: Getting started with R](#Required:-Getting-started-with-R)
     + [Sub-sub-heading](#sub-sub-heading)
 
 
