@@ -12,6 +12,7 @@
 - [Fetching publicly available data](#Fetching-publicly-available-data)
   * [SRA](#SRA)
   * [Reference genome](#Reference-genome)
+- [Trimming and aligning reads with Paleomix](#Trimming-and-aligning-reads-with-Paleomix)
 - [Wrap up](#Wrap-up)
 
 
@@ -137,7 +138,7 @@ After you download the reference, you will have to index it to make it usable fo
 `bwa index`
 
 
-## Trimming and aligning data with Paleomix
+## Trimming and aligning reads with Paleomix ##
 
 https://paleomix.readthedocs.io/en/stable/
 
