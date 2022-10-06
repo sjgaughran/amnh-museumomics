@@ -199,6 +199,11 @@ While not perfect, this VCF will be the final set of SNPs we use in our populati
 
 ## Wrap up ##
 
+As you'll see in the Bi *et al.* paper, we have only covered a subset of analyses in this workshop. Two other main analyses they do in that paper are demographic inference and outlier loci detection. Now that you have the data set, you can follow the methods that paper and try those analyeses yourselves!
+
+Beyond that, there are many more possible analyses out there, and new methods are being developed every year. As aDNA sequencing methods and analytical resources become more advanced, more and more studies will become possible using museum specimens of non-model organisms. We hope this workshop has given you a place to start in planning one of those future innovative studies. 
+
+If you have any questions about the workshop material, or want to chat more about project ideas, please feel free to reach out to Stephen Gaughran (sjgaughran@princeton.edu) or Melina Giakoumis (m.giakoumis1@gmail.com). 
 
 
 
