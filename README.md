@@ -6,7 +6,7 @@
   * [Required: Installing R packages](#Required-Installing-R-packages)
   * [Optional: Getting started with anaconda and the command line](#Optional-Getting-started-with-anaconda-and-the-command-line)
     + [Sub-sub-heading](#sub-sub-heading)
-
+- [Study system: changing chipmunks](#Study-system-changing-chipmunks)
 
 
 
