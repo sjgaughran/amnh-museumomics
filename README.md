@@ -187,7 +187,6 @@ Finally, we want to make sure our SNPs are bi-allelic.
 
 Our last two steps will be removing sites with too much missing data (>20%), and removing individuals with too many missing genotypes (>20%). Before we do that, let's take a look at where these measures stand. 
 
-
 Sample_SRR3171971 has a suspiciously high number of singletons. 
 
 Looking at the output, some of our samples do have high amounts of missing data (>30%). However, some of these may be affected by sites that are poor quality across most samples. Let's first remove those sites with missing data:
