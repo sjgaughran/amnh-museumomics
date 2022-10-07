@@ -175,25 +175,25 @@ That looks good for now, so we can move on to filtering!
 
 Let's start by filtering this variant set by setting a minimum PHRED-scaled quality and a minimum depth for each site. This weeds out the majority of sites that were covered by a few stray reads. We can use bcftools to filter with the command:
 
-`bcftools filter -i 'QUAL>20 && INFO/DP>100' Tminimus_SS.vcf > Tminimus_SS_minQ20minDP100.vcf`
+`bcftools filter -i 'QUAL>20000 && INFO/DP>100' Tminimus_SS.vcf > Tminimus_SS_minQ20kminDP100.vcf`
 
 Next let's filter on individual genotype calls. 
 
-`bcftools filter -S . -i 'FMT/DP>2 | FMT/GQ>20' Tminimus_SS_minQ20minDP100.vcf > Tminimus_SS_minQ20minDP100_GenoDP3GQ20.vcf`
+`bcftools filter -S . -i 'FMT/DP>2 | FMT/GQ>20 | FMT/DP<150' Tminimus_SS_minQ20kminDP100.vcf > Tminimus_SS_minQ20kminDP100_GenoDP3GQ20DP150.vcf`
 
 Finally, we want to make sure our SNPs are bi-allelic. 
 
-`bcftools view -m2 -M2 Tminimus_SS_minQ20minDP100_GenoDP3GQ20.vcf > Tminimus_SS_minQ20minDP100_GenoDP3GQ20_bi.vcf`
+`bcftools view -m2 -M2 Tminimus_SS_minQ20kminDP100_GenoDP3GQ20DP150.vcf > Tminimus_SS_minQ20kminDP100_GenoDP3GQ20DP150_bi.vcf`
 
 Our last two steps will be removing sites with too much missing data (>20%), and removing individuals with too many missing genotypes (>20%). Before we do that, let's take a look at where these measures stand. Run:
 
-`bcftools stats -s Tminimus_SS_minQ20minDP100_GenoDP3GQ20_bi.vcf`
+`bcftools stats -s - Tminimus_SS_minQ20kminDP100_GenoDP3GQ20DP150_bi.vcf`
 
 Sample_SRR3171971 has a suspiciously high number of singletons. 
 
 Looking at the output, some of our samples do have high amounts of missing data (>30%). However, some of these may be affected by sites that are poor quality across most samples. Let's first remove those sites with missing data:
 
-`bcftools filter -i 'F_MISSING<0.2' Tminimus_SS_minQ20minDP100_GenoDP3GQ20_bi.vcf > Tminimus_SS_minQ20minDP100_GenoDP3GQ20_bi_lowmiss.vcf` 
+`bcftools filter -i 'F_MISSING<0.2' Tminimus_SS_minQ20kminDP100_GenoDP3GQ20DP150_bi.vcf > Tminimus_SS_minQ20kminDP100_GenoDP3GQ20DP150_bi_lowmiss.vcf` 
 
 Checking the missing % again, we're now in much better shape! It looks like all individuals now have less than 10% missing genotype calls, which is good news!
 
@@ -203,7 +203,7 @@ However, there is one final genotype quality aspect that we should consider spec
 
 The easiest way for us to deal with this issue is to remove sites where the reference allele is C and the alternate allele is T ("C-to-T") or where the reference allele is G and the alternate allele is A ("G-to-A"). This is an overly conservative step, and will remove lots of perfectly valid SNPs from our data set. Filtering for deamination is an active topic of research, and more nuanced ways of filtering deaminated sites while retaining valid transitions are being developed. For now, though, we'll follow Bi and colleagues' lead, and remove C->T and G->A sites. We can filter for this with:
 
-`bcftools filter -e 'REF="C" & ALT="T"' Tminimus_SS_minQ20minDP100_GenoDP3GQ20_bi_lowmiss.vcf | bcftools filter -e 'REF="G" & ALT="A"' - > Tminimus_SS_minQ20minDP100_GenoDP3GQ20_bi_lowmiss_noTransit.vcf`
+`bcftools filter -e 'REF="C" & ALT="T"' Tminimus_SS_minQ20kminDP100_GenoDP3GQ20DP150_bi_lowmiss.vcf | bcftools filter -e 'REF="G" & ALT="A"' - > Tminimus_SS_minQ20kminDP100_GenoDP3GQ20DP150_bi_lowmiss_noTransit.vcf`
 
 While not perfect, this VCF will be the final set of SNPs we use in our population genetic analyses.
 
