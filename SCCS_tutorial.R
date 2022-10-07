@@ -10,7 +10,7 @@ data <- vcfR2genind(vcf)
 #This program uses an algorithm to find the likeliest number of clusters in your data. 
 #This first function transforms the data using PCA, then runs a k-means algorithm (testing increasing numbers of k, or populations) and produces summary statistics. 
 #You can read more about it in the DAPC tutorial here: https://adegenet.r-forge.r-project.org/files/tutorial-dapc.pdf
-grp<-find.clusters(data,max.n.clust=10)
+grp<-find.clusters(data,max.n.clust=5)
 #for this algorithm, we should keep all PCs because it is not computationally intensive and will not suffer from overfitting.
 #We generally want to pick the number of clusters with the smallest BIC- in this case, 2. 
 names(grp)
@@ -23,19 +23,26 @@ head(grp$grp, 10)
 #You can see here which samples are in which group
 #Now let's use the DAPC algorithm to describe the clusters and assign membership probabilities to the samples using a discriminant analysis on our inferred groups.
 dapc1 <- dapc(data, grp$grp)
-#this algorithm is a little more prone to overfitting, but there is no plateau in the information gained in the PCs, so let's keep them all. 
-dapc1
+#this algorithm is a little more prone to overfitting, so let's retain ~80 PCs.
+myCol <- c("darkblue", "purple", "green", "orange", "red", "blue")
 scatter(dapc1,scree.da=FALSE,bg="white",pch=20,cell=0,cstar=0,col=myCol,solid=.4, cex=3,clab=0,leg=TRUE,txt.leg=paste("Cluster",1:2))
 #Not very interesting, but let's see which samples are associated with each population! 
 assignplot(dapc1, cex.lab = 0.4)
 #In  this figure, red signifies assignment into a cluster.
 #The blue marks where these assignments match with our previous estimates of clustering (k-means).
 #looks like the modern samples are clustering together and the and historical samples are clustering together!
+#This isn't super interesting, and we know that there might be more variation within the groups based on sampling locality (North vs South).
+#So let's take a look at the PCA when we have a k of 4! 
+dapc1 <- dapc(data, grp$grp)
+#let's retain ~80 PCs. 
+scatter(dapc1,scree.da=FALSE,bg="white",pch=20,cell=0,cstar=0,col=myCol,solid=.4, cex=3,clab=0,leg=TRUE,txt.leg=paste("Cluster",1:2))
+assignplot(dapc1, cex.lab = 0.4)
 #Now let's take a look at more fine-scale structure in the data. 
 #Population Structure Analysis with sNMF in LEA 
 library(LEA)
 library(vcfR)
 #LEA likes things in geno format, so let's make our vcf into a geno file
+#First you will need to decompress the vcf with gunzip on your terminal. 
 geno1 = vcf2geno("Tminimus_SS_minQ20minDP100_GenoDP3GQ20_bi_lowmiss_noTransit.vcf", "Tminimus.geno", force = TRUE)
 #Let's make a new project
 project1 = NULL
