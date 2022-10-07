@@ -224,7 +224,7 @@ Now let's call our libraries:
 
 And now we can finally read in the vcf file:  
 
-`vcf <- read.vcfR("Tminimus_SS_minQ20minDP100_GenoDP3GQ20_bi_lowmiss_noTransit.vcf.gz")`
+`vcf <- read.vcfR("Tminimus_SS_minQ20kminDP100_GenoDP3GQ20DP150_bi_lowmiss_noTransit_12klines.vcf")`
 
 And then make it a genind object, which is the preferred format for adegenet: 
 
@@ -300,7 +300,7 @@ First, let's load our libraries:
 
 LEA likes things in geno format, so let's make our vcf into a geno file:
 
-`geno1 = vcf2geno("Tminimus_SS_minQ20minDP100_GenoDP3GQ20_bi_lowmiss_noTransit.vcf", "Tminimus.geno", force = TRUE)`
+`geno1 = vcf2geno("Tminimus_SS_minQ20kminDP100_GenoDP3GQ20DP150_bi_lowmiss_noTransit_12klines.vcf", "Tminimus.geno", force = TRUE)`
 
 Let's make a new project:
 
