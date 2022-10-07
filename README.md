@@ -281,7 +281,7 @@ So let's take a look at another value of K, and see the variation within these t
 
 Now choose a K of 4, and retain ~80 PCs. 
 
-`scatter(dapc1,scree.da=FALSE,bg="white",pch=20,cell=0,cstar=0,col=myCol,solid=.4, cex=3,clab=0,leg=TRUE,txt.leg=paste("Cluster",1:2))`
+`scatter(dapc1,scree.da=FALSE,bg="white",pch=20,cell=0,cstar=0,col=myCol,solid=.4, cex=3,clab=0,leg=TRUE,txt.leg=paste("Cluster",1:4))`
 
 Interesting! Let's see which samples are in which group.
 
