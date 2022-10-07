@@ -3,6 +3,7 @@
 setwd("Desktop/SCCS_tutorial/")
 #Making a PCA with DAPC
 library(adegenet)
+library(vcfR)
 #read in the vcf
 vcf <- read.vcfR("Tminimus_SS_minQ20kminDP100_GenoDP3GQ20DP150_bi_lowmiss_noTransit_12klines.vcf")
 #make it a genind object for adegenet
@@ -25,7 +26,7 @@ head(grp$grp, 10)
 dapc1 <- dapc(data, grp$grp)
 #this algorithm is a little more prone to overfitting, so let's retain ~80 PCs.
 myCol <- c("darkblue", "purple", "green", "orange", "red", "blue")
-scatter(dapc1,scree.da=FALSE,bg="white",pch=20,cell=0,cstar=0,col=myCol,solid=.4, cex=3,clab=0,leg=TRUE,txt.leg=paste("Cluster",1:2))
+scatter(dapc1,scree.da=FALSE,bg="white",pch=20,cell=0,cstar=0,col=myCol,solid=.4, cex=3,clab=0,leg=TRUE,txt.leg=paste("Cluster",1:4))
 #Not very interesting, but let's see which samples are associated with each population! 
 assignplot(dapc1, cex.lab = 0.4)
 #In  this figure, red signifies assignment into a cluster.
