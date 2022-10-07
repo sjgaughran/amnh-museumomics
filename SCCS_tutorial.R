@@ -35,7 +35,7 @@ assignplot(dapc1, cex.lab = 0.4)
 #So let's take a look at the PCA when we have a k of 4! 
 dapc1 <- dapc(data, grp$grp)
 #let's retain ~80 PCs. 
-scatter(dapc1,scree.da=FALSE,bg="white",pch=20,cell=0,cstar=0,col=myCol,solid=.4, cex=3,clab=0,leg=TRUE,txt.leg=paste("Cluster",1:2))
+scatter(dapc1,scree.da=FALSE,bg="white",pch=20,cell=0,cstar=0,col=myCol,solid=.4, cex=3,clab=0,leg=TRUE,txt.leg=paste("Cluster",1:4))
 assignplot(dapc1, cex.lab = 0.4)
 #Now let's take a look at more fine-scale structure in the data. 
 #Population Structure Analysis with sNMF in LEA 
