@@ -256,7 +256,7 @@ Now let's use the DAPC algorithm to describe the clusters, and assign membership
 
 `dapc1 <- dapc(data, grp$grp)`
 
-This algorithm is a little more prone to overfitting, but there is no plateau in the information gained in the PCs, so let's keep them all. 
+This algorithm is a little more prone to overfitting, so let's retain only ~80 PCs. 
 
 `dapc1`
 
@@ -271,6 +271,21 @@ Not very interesting, but let's see which samples are associated with each popul
 In  this figure, red signifies assignment into a cluster.
 The blue marks where these assignments match with our previous estimates of clustering (in the k-means algorithm).
 Looks like the modern samples are clustering together and the and historical samples are clustering together!
+
+We know from the paper that there is variation within these groups- North vs South and historical vs modern.
+So let's take a look at another value of K, and see the variation within these two distinct groups. 
+
+`dapc1 <- dapc(data, grp$grp)`
+
+Now choose a K of 4, and retain ~80 PCs. 
+
+`scatter(dapc1,scree.da=FALSE,bg="white",pch=20,cell=0,cstar=0,col=myCol,solid=.4, cex=3,clab=0,leg=TRUE,txt.leg=paste("Cluster",1:2))`
+
+Interesting! Let's see which samples are in which group.
+
+`assignplot(dapc1, cex.lab = 0.4)`
+
+So there is a North/South and Historical/Modern divide! 
 
 ## Assessing population structure with sNMF in LEA ## 
 
