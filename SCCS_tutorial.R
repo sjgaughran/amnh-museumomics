@@ -4,7 +4,7 @@ setwd("Desktop/SCCS_tutorial/")
 #Making a PCA with DAPC
 library(adegenet)
 #read in the vcf
-vcf <- read.vcfR("Tminimus_SS_minQ20minDP100_GenoDP3GQ20_bi_lowmiss_noTransit.vcf.gz")
+vcf <- read.vcfR("Tminimus_SS_minQ20kminDP100_GenoDP3GQ20DP150_bi_lowmiss_noTransit_12klines.vcf")
 #make it a genind object for adegenet
 data <- vcfR2genind(vcf)
 #This program uses an algorithm to find the likeliest number of clusters in your data. 
@@ -43,7 +43,7 @@ library(LEA)
 library(vcfR)
 #LEA likes things in geno format, so let's make our vcf into a geno file
 #First you will need to decompress the vcf with gunzip on your terminal. 
-geno1 = vcf2geno("Tminimus_SS_minQ20minDP100_GenoDP3GQ20_bi_lowmiss_noTransit.vcf", "Tminimus.geno", force = TRUE)
+geno1 = vcf2geno("Tminimus_SS_minQ20kminDP100_GenoDP3GQ20DP150_bi_lowmiss_noTransit_12klines.vcf", "Tminimus.geno", force = TRUE)
 #Let's make a new project
 project1 = NULL
 #And start our snmf run! 
