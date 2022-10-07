@@ -216,6 +216,7 @@ Into your R console and clicking Run.
 
 Now let's call our libraries: 
 `library(adegenet)`
+
 `library(vcfR)`
 
 And now we can finally read in the vcf file:  
@@ -245,7 +246,9 @@ Let's check out what has been output into the data frame:
 In this data frame, Kstat are the BIC values for each k value, stat is the selected k value, and grp shows you which samples have been assigned to which group. 
 
 `head(grp$Kstat, 5)` 
+
 `grp$stat`
+
 `head(grp$grp, 10)`
 
 Now let's use the DAPC algorithm to describe the clusters, and assign membership probabilities to the samples using a discriminant analysis on our inferred groups.
@@ -273,6 +276,7 @@ Now let's take a look at more fine-scale structure in the data.
 First, let's load our libraries: 
 
 `library(LEA)`
+
 `library(vcfR)`
 
 LEA likes things in geno format, so let's make our vcf into a geno file:
@@ -302,9 +306,13 @@ Usually we try to choose the "knee"- so, usually the lowest in this CE graph is 
 
 Then we select the "best" run for each value of K, and continue our downstream analysis with these values: 
 `best1 = which.min(cross.entropy(project1, K = 1))`
+
 `best2 = which.min(cross.entropy(project1, K = 2))`
+
 `best3 = which.min(cross.entropy(project1, K = 3))`
+
 `best4 = which.min(cross.entropy(project1, K = 4))`
+
 `best5 = which.min(cross.entropy(project1, K = 5))`
 
 Now, we give the program our list of our sample names for plotting: 
@@ -357,18 +365,26 @@ If you're going to do this for real, you will want to take some extra quality co
 So let's do this first using a k of 2. This script is using a genomic control, which helps reduce the effetcs of population structure. The lambda value is used as an inflation factor to rescale the cho-squared statistics in the computation of p-values.
 
 `p2 = snmf.pvalues(project1, entropy = TRUE, ploidy = 2, K = 2, genomic.control = T, lambda = 2.5)`
+
 `pvalues2 = p2$pvalues`
+
 `par(mfrow = c(2,1))` 
+
 `hist(pvalues2, col = "orange")` 
+
 `plot(-log10(pvalues2), pch = 19, col = "blue", cex = .5)`
 
 Looks like we have a lot of highly differentiated SNPs! 
 Let's try with K=3.
 
 `p3 = snmf.pvalues(project1, entropy = TRUE, ploidy = 2, K = 3, genomic.control = T, lambda = 2.5)` 
+
 `pvalues3 = p3$pvalues`
+
 `par(mfrow = c(2,1))` 
+
 `hist(pvalues3, col = "orange")`
+
 `plot(-log10(pvalues3), pch = 19, col = "blue", cex = .5)`
 
 These are some highly differentiated populations! 
