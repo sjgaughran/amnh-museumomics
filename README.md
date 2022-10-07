@@ -17,8 +17,9 @@
 - [Variant calling with BCFtools](#Variant-calling-with-BCFtools)
 - [Variant filtering with SAMtools](#Variant-calling-with-SAMtools)
 - [Importing a VCF into R](#Importing-a-VCF-into-R)
-- [Running adegenet and DAPC](#Running-adegenet-and-DAPC)
-- [Running structure](#Running-structure)
+- [Running a PCA and DAPC](#Running-a-PCA-and-DAPC)
+- [Assessing population structure with sNMF in LEA](#Assessing-population-structure-with-sNMF-in-LEA)
+- [Running tests for outlier loci](#Running-tests-for-outlier-loci)
 - [Wrap up](#Wrap-up)
 
 
@@ -210,7 +211,7 @@ While not perfect, this VCF will be the final set of SNPs we use in our populati
 First, download the files from Github and put them in a folder on your desktop labelled "SCCS_tutorial"
 Then set this folder as your working directory by typing: 
 
-`setwd("Desktop/SCCS_tutorial/")'
+`setwd("Desktop/SCCS_tutorial/")`
 
 Into your R console and clicking Run.
 
@@ -273,6 +274,7 @@ The blue marks where these assignments match with our previous estimates of clus
 Looks like the modern samples are clustering together and the and historical samples are clustering together!
 
 ## Assessing population structure with sNMF in LEA ## 
+
 Now let's take a look at more fine-scale structure in the data. 
 First, let's load our libraries: 
 
@@ -363,7 +365,7 @@ Also FYI, You don't need to run this from scratch each time! You can load old pr
 
 `project = load.snmfProject("Tminimus.snmfProject")`
  
-## Population differentiation tests ##
+## Running tests for outlier loci ##
 Finally, let's take a look at some outlier loci between the groups. sNMF can produce population differentiation statistics computed from the ancestry coefficients that we just calculated. p-values are then returned for all loci. 
 If you're going to do this for real, you will want to take some extra quality control steps, like imputing missing data. We won't be doing that here, but be sure to take a look at the LEA manual to find out more details: http://membres-timc.imag.fr/Olivier.Francois/LEA/files/LEA_github.pdf
 
