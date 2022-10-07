@@ -185,7 +185,9 @@ Finally, we want to make sure our SNPs are bi-allelic.
 
 `bcftools view -m2 -M2 Tminimus_SS_minQ20minDP100_GenoDP3GQ20.vcf > Tminimus_SS_minQ20minDP100_GenoDP3GQ20_bi.vcf`
 
-Our last two steps will be removing sites with too much missing data (>20%), and removing individuals with too many missing genotypes (>20%). Before we do that, let's take a look at where these measures stand. 
+Our last two steps will be removing sites with too much missing data (>20%), and removing individuals with too many missing genotypes (>20%). Before we do that, let's take a look at where these measures stand. Run:
+
+`bcftools stats -s Tminimus_SS_minQ20minDP100_GenoDP3GQ20_bi.vcf`
 
 Sample_SRR3171971 has a suspiciously high number of singletons. 
 
@@ -193,7 +195,7 @@ Looking at the output, some of our samples do have high amounts of missing data 
 
 `bcftools filter -i 'F_MISSING<0.2' Tminimus_SS_minQ20minDP100_GenoDP3GQ20_bi.vcf > Tminimus_SS_minQ20minDP100_GenoDP3GQ20_bi_lowmiss.vcf` 
 
-Checking the missing % again, we're now in much better shape! It looks like all individuals now have less than 10% missing genotype calls, which is good news! This is a good example of why it
+Checking the missing % again, we're now in much better shape! It looks like all individuals now have less than 10% missing genotype calls, which is good news!
 
 There are several other filtering steps we could take, and the Bi *et al.* 2019 paper covers a few more. For the sake of ease, though, we'll stop our filtering here.
 
