@@ -215,6 +215,7 @@ Then set this folder as your working directory by typing:
 Into your R console and clicking Run.
 
 Now let's call our libraries: 
+
 `library(adegenet)`
 
 `library(vcfR)`
@@ -284,6 +285,7 @@ LEA likes things in geno format, so let's make our vcf into a geno file:
 `geno1 = vcf2geno("Tminimus_SS_minQ20minDP100_GenoDP3GQ20_bi_lowmiss_noTransit.vcf", "Tminimus.geno", force = TRUE)`
 
 Let's make a new project:
+
 `project1 = NULL`
 
 And start our snmf run! 
@@ -305,6 +307,7 @@ Once it is done running, we can plot the cross-entropy:
 Usually we try to choose the "knee"- so, usually the lowest in this CE graph is probably best.
 
 Then we select the "best" run for each value of K, and continue our downstream analysis with these values: 
+
 `best1 = which.min(cross.entropy(project1, K = 1))`
 
 `best2 = which.min(cross.entropy(project1, K = 2))`
@@ -339,6 +342,7 @@ Now, we give the program our list of our sample names for plotting:
 For the sake of figure readability, I have shortened our sample names- H stands for historical, M for modern, N for North and S for South.
  
 We also need to choose our colors: 
+
 `my.colors <- c("tomato","lightblue", "olivedrab", "gold")`
 
 And now let's take a look at the data! First for K=2: 
@@ -356,6 +360,7 @@ axis(1, at = 1:length(bp$order),
 Now let's do K=3 and K=4. See if you can figure out how to change this script to plot those K values! 
 
 Also FYI, You don't need to run this from scratch each time! You can load old projects with this command
+
 `project = load.snmfProject("Tminimus.snmfProject")`
  
 ## Population differentiation tests ##
